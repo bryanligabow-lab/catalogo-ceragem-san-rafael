@@ -52,7 +52,7 @@
   .lead{font-size:13.5px;color:#5f574f}
 
   /* Hero */
-  .hero-photo{height:188px;border-radius:20px;margin:6px 0 16px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:62px;box-shadow:var(--sombra)}
+  .hero-photo{height:188px;border-radius:20px;margin:6px 0 16px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:62px;background-size:cover;background-position:center;box-shadow:var(--sombra)}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.12))}
   .hero-photo .ph-tag{position:absolute;bottom:9px;right:11px;z-index:2;font-size:9.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.28);padding:3px 9px;border-radius:20px}
 
@@ -90,7 +90,7 @@
   .feat .pr{font-size:22px;font-weight:800;color:var(--rojo)}
 
   /* Thumbs / gradientes */
-  .thumb{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex:0 0 auto;box-shadow:0 4px 10px rgba(90,45,15,.14)}
+  .thumb{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex:0 0 auto;background-size:cover;background-position:center 28%;box-shadow:0 4px 10px rgba(90,45,15,.14)}
   .g1{background:linear-gradient(135deg,#F7A85B,#F0703F)}
   .g2{background:linear-gradient(135deg,#EF5F4A,#E0291C)}
   .g3{background:linear-gradient(135deg,#F6B24A,#F0892E)}
@@ -124,7 +124,7 @@
   .d-band{position:relative;border-radius:0 0 24px 24px;color:#fff;padding:20px 54px 22px;text-align:center;font-size:16px;font-weight:800;line-height:1.25;box-shadow:var(--sombra)}
   .d-band .back{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center}
   .d-band .back svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-  .d-img{height:170px;margin:16px 0 0;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:66px;color:#fff;box-shadow:var(--sombra)}
+  .d-img{height:170px;margin:16px 0 0;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:66px;color:#fff;background-size:cover;background-position:center;box-shadow:var(--sombra)}
   .d-body{padding-top:18px}
   .d-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
   .d-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--coral)}
@@ -195,7 +195,7 @@
 
     <!-- ===== INICIO ===== -->
     <section class="view" id="view-inicio">
-      <div class="hero-photo g1">💆‍♀️<span class="ph-tag">tu foto aquí</span></div>
+      <div class="hero-photo" style="background-image:url('assets/productos/hero.png')"></div>
       <div class="eyebrow">Healing Your Life</div>
       <h1 class="title">Tu bienestar integral en un solo lugar</h1>
       <p class="lead" style="margin-bottom:16px">Termoterapia, masaje, ajuste quiropráctico, desintoxicación iónica y sueroterapia.</p>
@@ -294,7 +294,7 @@
   const SERVICES = [
     {id:'prueba', name:'Sesión de Prueba', price:'$5', priceNote:'1ª sesión · cupos limitados por día',
      tag:'Manta Térmica + Camilla Máster V3', short:'Relajación profunda desde la primera sesión.',
-     emoji:'🔥', grad:'g2', featured:true, kicker:'Oferta de entrada',
+     emoji:'🔥', img:'prueba.png', grad:'g2', featured:true, kicker:'Oferta de entrada',
      benefits:['Alivia el dolor de espalda, cuello, cintura y piernas.','Relaja los músculos, reduce el estrés y mejora el sueño.','Activa la circulación y ayuda a eliminar toxinas.','Te sientes más ligero, relajado y con energía.'],
      wa:'Hola CERAGEM San Rafael 👋 Quiero agendar mi SESIÓN DE PRUEBA de $5 (Manta térmica + Camilla Máster V3). ¿Qué horarios tienen disponibles?'},
 
@@ -306,7 +306,7 @@
 
     {id:'descontracturante', name:'Masaje Relajante Descontracturante', price:'$20', priceNote:'2 sesiones por $30',
      tag:'3 terapias en 1', short:'Libera contracturas y tensión muscular profunda.',
-     emoji:'💆', grad:'g2', featured:true,
+     emoji:'💆', img:'descontracturante.png', grad:'g2', featured:true,
      benefits:['Manta térmica mineralizada — relaja y baja la tensión.','Camilla Máster V4 — descontractura espalda, cuello y lumbar.','Masaje manual terapéutico — libera puntos gatillo y contracturas.'],
      wa:'Hola 👋 Me interesa el Masaje Relajante Descontracturante ($20 · 2 sesiones $30).'},
 
@@ -357,10 +357,13 @@
   const byId = id => SERVICES.find(s => s.id === id);
 
   /* ===== Render lista ===== */
+  function thumbHtml(s){
+    return '<span class="thumb '+s.grad+'">'+s.emoji+'</span>';
+  }
   function rowHtml(s){
     const end = s.price ? '<span class="row-price">'+s.price+'</span>' : '';
     return '<button class="srow" data-detail="'+s.id+'">'
-      + '<span class="thumb '+s.grad+'">'+s.emoji+'</span>'
+      + thumbHtml(s)
       + '<span class="srow-txt"><b>'+s.name+'</b><span>'+s.short+'</span></span>'
       + '<span class="srow-end">'+end+'<svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>'
       + '</button>';
@@ -370,7 +373,7 @@
   /* ===== Render destacados (Inicio) ===== */
   function featHtml(s){
     return '<button class="feat" data-detail="'+s.id+'">'
-      + '<span class="thumb '+s.grad+'">'+s.emoji+'</span>'
+      + thumbHtml(s)
       + '<span class="ft">'+(s.kicker?'<span class="k">'+s.kicker+'</span>':'')+'<b>'+s.name+'</b><span>'+s.short+'</span></span>'
       + (s.price?'<span class="pr">'+s.price+'</span>':'')
       + '</button>';
@@ -399,7 +402,7 @@
     const priceBlock = s.price ? '<span class="price-pill">'+s.price+'</span>' : '';
     return '<div class="d-band '+s.grad+'"><button class="back" data-back aria-label="Volver"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><span>'+s.name+'</span></div>'
       + '<div style="padding:0 18px 24px">'
-      + '<div class="d-img '+s.grad+'">'+s.emoji+'</div>'
+      + '<div class="d-img '+s.grad+'"'+(s.img?' style="background-image:url(\'assets/productos/'+s.img+'\')"':'')+'>'+(s.img?'':s.emoji)+'</div>'
       + '<div class="d-body">'
       + '<div class="d-top"><div><div class="d-tag">'+s.tag+'</div><div class="d-short">'+s.short+'</div></div>'+priceBlock+'</div>'
       + (s.priceNote?'<div class="d-note">'+s.priceNote+'</div>':'')

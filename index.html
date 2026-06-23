@@ -2,236 +2,178 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>CERAGEM San Rafael · Catálogo de Sesiones y Bienestar</title>
-<meta name="description" content="Termoterapia, masaje, desintoxicación iónica y sueroterapia en San Rafael, Valle de los Chillos. Agenda tu sesión de prueba desde $5." />
-<!-- Vista previa al compartir por WhatsApp / redes -->
+<meta name="description" content="Termoterapia, masaje, ajuste quiropráctico, desintoxicación iónica y sueroterapia en San Rafael, Valle de los Chillos. Sesión de prueba desde $5." />
 <meta property="og:title" content="CERAGEM San Rafael · Tu bienestar, nuestra misión" />
 <meta property="og:description" content="Sesiones de termoterapia, masaje y sueroterapia. ¡Sesión de prueba por solo $5! Valle de los Chillos." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/og.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --rojo:#E2231A;
-    --rojo-osc:#B71910;
-    --naranja:#F4911E;
-    --dorado:#FBB040;
-    --tinta:#2B2522;
-    --gris:#6E6862;
-    --crema:#FFF8F3;
-    --crema2:#FDEFE4;
-    --linea:#F0E2D6;
-    --wa:#25D366;
-    --wa-osc:#1da851;
-    --sombra:0 10px 30px rgba(120,40,10,.10);
-    --radio:18px;
+    --rojo:#E2231A; --rojo2:#C11A12; --coral:#EF5A3A; --naranja:#F4911E; --dorado:#FBB040;
+    --ink:#2A2521; --gris:#8C8279; --crema:#F6F1EB; --card:#fff; --linea:#EFE6DC;
+    --chip:#FCEBE7; --wa:#2DB84D; --wa2:#23a043; --navoff:#BCB2A7;
+    --sombra:0 8px 22px rgba(90,45,15,.07); --sombra2:0 12px 30px rgba(90,45,15,.12);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    color:var(--tinta);
-    background:#EFE3D8;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#E7DDD2;-webkit-font-smoothing:antialiased;line-height:1.5}
   img{max-width:100%;display:block}
   a{text-decoration:none;color:inherit}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
 
-  /* Contenedor tipo tarjeta (mobile-first, centrado) */
-  .wrap{
-    max-width:600px;margin:0 auto;background:var(--crema);
-    min-height:100vh;box-shadow:0 0 60px rgba(0,0,0,.12);overflow:hidden;
-  }
+  .app{max-width:540px;margin:0 auto;background:var(--crema);min-height:100vh;position:relative;box-shadow:0 0 60px rgba(0,0,0,.13);overflow:hidden;padding-bottom:84px}
 
-  /* ===== Header ===== */
-  header{
-    position:sticky;top:0;z-index:40;background:#fff;
-    border-bottom:1px solid var(--linea);
-    padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;
-  }
-  .logo .tag{font-size:10px;font-style:italic;color:var(--gris);letter-spacing:.5px;line-height:1}
-  .logo .row{display:flex;align-items:center;gap:6px;margin-top:1px}
-  .logo .word{font-weight:800;font-size:24px;color:var(--rojo);letter-spacing:1px;line-height:1}
-  .logo .cube{width:26px;height:26px}
-  .logo .sub{font-size:10px;font-weight:600;color:var(--rojo);line-height:1.1;margin-top:2px}
-  .header-cta{
-    background:var(--wa);color:#fff;font-weight:600;font-size:12.5px;
-    padding:9px 13px;border-radius:30px;white-space:nowrap;display:flex;align-items:center;gap:6px;
-    box-shadow:0 4px 12px rgba(37,211,102,.35)
-  }
-  .header-cta svg{width:15px;height:15px;fill:#fff}
-
-  /* ===== Nav chips ===== */
-  nav{
-    position:sticky;top:58px;z-index:35;background:rgba(255,248,243,.96);
-    backdrop-filter:blur(6px);border-bottom:1px solid var(--linea);
-    display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none
-  }
-  nav::-webkit-scrollbar{display:none}
-  nav a{
-    flex:0 0 auto;font-size:13px;font-weight:600;color:var(--gris);
-    padding:7px 14px;border-radius:30px;background:#fff;border:1px solid var(--linea);white-space:nowrap
-  }
-  nav a:active{background:var(--rojo);color:#fff;border-color:var(--rojo)}
-
-  /* ===== Hero ===== */
-  .hero{
-    position:relative;padding:30px 22px 34px;text-align:center;color:#fff;
-    background:linear-gradient(135deg,var(--rojo) 0%,#D33417 55%,var(--naranja) 130%);
-    overflow:hidden
-  }
-  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
-  .hero .eyebrow{font-style:italic;font-weight:500;opacity:.95;font-size:14px;letter-spacing:.5px}
-  .hero h1{font-size:30px;font-weight:800;line-height:1.12;margin:8px 0 10px;position:relative}
-  .hero p{font-size:14.5px;opacity:.96;max-width:90%;margin:0 auto 18px;position:relative}
-  .hero-btns{display:flex;flex-direction:column;gap:10px;position:relative}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-weight:700;font-size:15px;padding:14px 18px;border-radius:30px;cursor:pointer;border:none;width:100%;
-    transition:transform .12s ease
-  }
-  .btn:active{transform:scale(.97)}
-  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.4)}
-  .btn-wa svg{width:19px;height:19px;fill:#fff}
-  .btn-ghost{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.6)}
-  .hero-badges{display:flex;justify-content:center;gap:18px;margin-top:20px;flex-wrap:wrap;position:relative}
-  .hero-badges div{font-size:12px;font-weight:600;opacity:.95;display:flex;flex-direction:column;align-items:center;gap:2px}
-  .hero-badges .n{font-size:20px;font-weight:800}
-
-  /* ===== Secciones ===== */
-  section{padding:34px 18px}
-  .sec-head{text-align:center;margin-bottom:22px}
-  .sec-head .eyebrow{
-    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-    color:var(--rojo);background:var(--crema2);padding:5px 14px;border-radius:30px
-  }
-  .sec-head h2{font-size:23px;font-weight:800;margin-top:10px;line-height:1.15}
-  .sec-head p{font-size:14px;color:var(--gris);margin-top:6px}
-
-  /* Media / foto placeholder */
-  .media{
-    height:150px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    font-size:54px;color:#fff;position:relative;overflow:hidden;background-size:cover;background-position:center
-  }
-  .media .lbl{position:absolute;bottom:8px;right:10px;font-size:9px;font-weight:600;color:rgba(255,255,255,.85);background:rgba(0,0,0,.25);padding:3px 8px;border-radius:20px}
-  .g-rojo{background:linear-gradient(135deg,var(--rojo),#F0612A)}
-  .g-naranja{background:linear-gradient(135deg,var(--naranja),var(--dorado))}
-  .g-calido{background:linear-gradient(135deg,#E2231A,#FBB040)}
-
-  /* Tarjetas */
-  .card{background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden;margin-bottom:18px;border:1px solid var(--linea)}
-  .card .pad{padding:16px 16px 18px}
-  .card h3{font-size:18px;font-weight:800;line-height:1.15}
-  .price-pill{display:inline-flex;align-items:baseline;gap:3px;background:var(--rojo);color:#fff;font-weight:800;padding:6px 14px;border-radius:30px;font-size:20px}
-  .price-pill small{font-size:11px;font-weight:600;opacity:.9}
-  .price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 12px}
-  .incluye{font-size:12px;font-weight:700;color:var(--naranja);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
-  ul.bul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:4px 0 14px}
-  ul.bul li{position:relative;padding-left:24px;font-size:13.5px;color:#4a423d}
-  ul.bul li::before{content:"";position:absolute;left:0;top:6px;width:13px;height:13px;border-radius:50%;background:var(--crema2);box-shadow:inset 0 0 0 3px var(--rojo)}
-  .tag-line{font-size:13px;font-style:italic;color:var(--gris);margin-bottom:12px}
-
-  .btn-wa-sm{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;background:var(--wa);color:#fff;font-weight:700;font-size:14px;padding:12px;border-radius:12px;cursor:pointer;border:none}
-  .btn-wa-sm svg{width:17px;height:17px;fill:#fff}
-  .btn-wa-sm:active{background:var(--wa-osc)}
-
-  .badge{position:absolute;top:12px;left:12px;background:var(--dorado);color:#5a3a00;font-weight:800;font-size:11px;padding:5px 11px;border-radius:30px;z-index:2;box-shadow:0 3px 8px rgba(0,0,0,.15)}
-  .badge.promo{background:#fff;color:var(--rojo)}
-
-  /* ===== Sesión de prueba (destacada) ===== */
-  .prueba{background:linear-gradient(160deg,#FFFDF9,#FDEFE4)}
-  .prueba .hero-card{
-    background:#fff;border:2px solid var(--dorado);border-radius:22px;overflow:hidden;
-    box-shadow:0 14px 36px rgba(226,35,26,.16);position:relative
-  }
-  .prueba .ribbon{background:linear-gradient(90deg,var(--rojo),var(--naranja));color:#fff;text-align:center;padding:9px;font-weight:800;font-size:13px;letter-spacing:1px}
-  .prueba .big-price{display:flex;align-items:center;justify-content:center;gap:14px;padding:18px 16px 4px}
-  .prueba .big-price .num{font-size:62px;font-weight:800;color:var(--rojo);line-height:.9}
-  .prueba .big-price .num small{font-size:24px;vertical-align:super}
-  .prueba .big-price .meta{text-align:left}
-  .prueba .big-price .meta b{display:block;font-size:15px;color:var(--tinta)}
-  .prueba .big-price .meta span{font-size:12px;color:var(--gris)}
-  .ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px 4px}
-  .ben{background:var(--crema);border-radius:12px;padding:12px;border:1px solid var(--linea)}
-  .ben .ic{font-size:22px}
-  .ben b{display:block;font-size:12.5px;margin:5px 0 2px;color:var(--rojo)}
-  .ben span{font-size:11.5px;color:var(--gris);line-height:1.35}
-  .pat-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--naranja);text-align:center;margin:18px 0 10px}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:0 14px}
-  .chips span{font-size:11.5px;font-weight:600;color:#7a4a12;background:#FFF1E2;border:1px solid #F6D9BE;padding:5px 11px;border-radius:30px}
-  .cupos{text-align:center;font-size:12px;font-weight:600;color:var(--rojo);margin-top:14px}
-
-  /* ===== Sueros ===== */
-  .suero-card{display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:16px;padding:14px;margin-bottom:13px;box-shadow:0 6px 18px rgba(120,40,10,.06)}
-  .suero-ic{flex:0 0 50px;width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff}
-  .suero-card h4{font-size:15.5px;font-weight:800;line-height:1.1}
-  .suero-card .comp{font-size:11px;font-weight:600;color:var(--naranja);margin:3px 0 7px;text-transform:uppercase;letter-spacing:.4px}
-  .suero-card ul{list-style:none;display:flex;flex-direction:column;gap:3px}
-  .suero-card ul li{font-size:12.5px;color:#4a423d;padding-left:15px;position:relative}
-  .suero-card ul li::before{content:"•";position:absolute;left:2px;color:var(--rojo);font-weight:800}
-
-  /* ===== Tabla precios ===== */
-  .pricelist{background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden;border:1px solid var(--linea)}
-  .pl-row{display:flex;align-items:center;gap:12px;padding:13px 15px;border-bottom:1px solid var(--linea)}
-  .pl-row:last-child{border-bottom:none}
-  .pl-row .nro{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--crema2);color:var(--rojo);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
-  .pl-row .desc{flex:1}
-  .pl-row .desc b{font-size:13.5px;display:block;line-height:1.25}
-  .pl-row .desc span{font-size:11.5px;color:var(--gris)}
-  .pl-row .pr{font-weight:800;color:var(--rojo);font-size:18px;white-space:nowrap}
-  .pl-row.star{background:linear-gradient(90deg,#FFF6EC,#fff)}
-
-  /* ===== Domicilio ===== */
-  .domicilio{background:linear-gradient(160deg,#FFFDF9,#FDEFE4)}
-  .desc-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
-  .tier{background:#fff;border:1px solid var(--linea);border-radius:14px;text-align:center;padding:12px 6px}
-  .tier .pct{font-size:20px;font-weight:800;color:var(--rojo)}
-  .tier .lbl{font-size:10.5px;color:var(--gris);font-weight:600;line-height:1.2;margin-top:3px}
-  .tier.best{background:var(--rojo);border-color:var(--rojo)}
-  .tier.best .pct,.tier.best .lbl{color:#fff}
-
-  /* ===== Equipos ===== */
-  .equipo{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px dashed var(--linea)}
-  .equipo:last-child{border-bottom:none}
-  .equipo .ic{flex:0 0 48px;width:48px;height:48px;border-radius:14px;background:var(--crema2);display:flex;align-items:center;justify-content:center;font-size:24px}
-  .equipo h4{font-size:15px;font-weight:800;color:var(--rojo)}
-  .equipo p{font-size:12.5px;color:#4a423d;margin-top:3px}
-
-  /* ===== Footer ===== */
-  footer{background:linear-gradient(160deg,var(--rojo),var(--rojo-osc));color:#fff;padding:30px 20px 26px;text-align:center}
-  footer .flogo .word{color:#fff;font-size:26px;font-weight:800;letter-spacing:1px}
-  footer .flogo .sub{font-size:12px;font-weight:600;opacity:.9;margin-top:2px}
-  footer .mision{font-size:15px;font-weight:700;margin:14px 0 20px}
-  .contact-list{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 22px;text-align:left}
-  .contact-list a,.contact-list div{display:flex;align-items:center;gap:12px;font-size:13.5px;background:rgba(255,255,255,.12);padding:12px 15px;border-radius:12px}
-  .contact-list .ic{font-size:18px;width:22px;text-align:center}
-  .socials{display:flex;justify-content:center;gap:14px;margin-bottom:18px}
-  .socials a{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:19px}
-  footer .fine{font-size:11px;opacity:.75;line-height:1.5}
-
-  /* ===== Botón flotante WhatsApp ===== */
-  .fab{position:fixed;bottom:18px;right:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);box-shadow:0 8px 22px rgba(37,211,102,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:pulse 2.4s infinite}
-  .fab svg{width:30px;height:30px;fill:#fff}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-  @media(min-width:600px){.fab{right:calc(50% - 282px)}}
-
-  /* Aviso de configuración (solo si falta el número) */
-  .config-warn{display:none;background:#FFF3CD;color:#7a5c00;border-bottom:1px solid #f0e0a0;font-size:12px;text-align:center;padding:9px 14px;font-weight:600}
+  /* Aviso config */
+  .config-warn{display:none;background:#FFF3CD;color:#7a5c00;font-size:11.5px;text-align:center;padding:8px 14px;font-weight:600}
   .config-warn.show{display:block}
+
+  /* Appbar */
+  .appbar{position:sticky;top:0;z-index:30;background:var(--crema);padding:14px 18px 10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .logo .tag{font-size:9px;font-style:italic;color:var(--gris);line-height:1}
+  .logo .row{display:flex;align-items:center;gap:5px}
+  .logo .word{font-weight:800;font-size:21px;color:var(--rojo);letter-spacing:.5px;line-height:1.05}
+  .logo .cube{width:21px;height:21px}
+  .logo .sub{font-size:9.5px;font-weight:600;color:var(--rojo);margin-top:1px}
+  .wa-circle{width:42px;height:42px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 5px 14px rgba(45,184,77,.4);flex:0 0 auto}
+  .wa-circle svg{width:22px;height:22px;fill:#fff}
+
+  /* Vistas */
+  .view{padding:6px 18px 24px;animation:fade .25s ease}
+  .view[hidden]{display:none}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .eyebrow{font-style:italic;font-weight:600;color:var(--rojo);font-size:14px}
+  h1.title{font-size:27px;font-weight:800;line-height:1.12;margin:3px 0 8px}
+  .lead{font-size:13.5px;color:#5f574f}
+
+  /* Hero */
+  .hero-photo{height:188px;border-radius:20px;margin:6px 0 16px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:62px;box-shadow:var(--sombra)}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.12))}
+  .hero-photo .ph-tag{position:absolute;bottom:9px;right:11px;z-index:2;font-size:9.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.28);padding:3px 9px;border-radius:20px}
+
+  /* Botones */
+  .btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;font-weight:700;font-size:15px;padding:14px;border-radius:30px;transition:transform .12s ease;margin-bottom:11px}
+  .btn:active{transform:scale(.975)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 18px rgba(45,184,77,.38)}
+  .btn-wa svg{width:19px;height:19px;fill:#fff}
+  .btn-coral{background:linear-gradient(120deg,var(--coral),#E5421F);color:#fff;box-shadow:0 8px 18px rgba(239,90,58,.34)}
+
+  /* Stat card */
+  .stats{display:flex;background:var(--card);border-radius:18px;box-shadow:var(--sombra);padding:16px 6px;margin:8px 0 22px}
+  .stats .st{flex:1;text-align:center;padding:0 4px}
+  .stats .st+.st{border-left:1px solid var(--linea)}
+  .stats .n{font-size:20px;font-weight:800;color:var(--rojo);line-height:1}
+  .stats .l{font-size:10.5px;color:var(--gris);font-weight:500;margin-top:5px;line-height:1.25}
+
+  /* Bloque "qué es" / cards genéricas */
+  .block{background:var(--card);border-radius:18px;box-shadow:var(--sombra);padding:18px;margin-bottom:16px}
+  .block h2,.sec-title{font-size:19px;font-weight:800;margin-bottom:4px}
+  .block p{font-size:13.5px;color:#5f574f}
+  .link-more{display:inline-flex;align-items:center;gap:5px;color:var(--rojo);font-weight:700;font-size:13.5px;margin-top:12px}
+
+  .view-head{margin:8px 2px 16px}
+  .view-head h2{font-size:23px;font-weight:800;line-height:1.15}
+  .view-head p{font-size:13px;color:var(--gris);margin-top:3px}
+
+  /* Featured */
+  .feat{display:flex;gap:13px;align-items:center;background:linear-gradient(120deg,#fff,#FFF4EE);border:1.5px solid #F8DCCF;border-radius:18px;padding:14px;box-shadow:var(--sombra);margin-bottom:8px;width:100%;text-align:left}
+  .feat .thumb{flex:0 0 56px}
+  .feat .ft{flex:1}
+  .feat .ft .k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--coral)}
+  .feat .ft b{display:block;font-size:15.5px;font-weight:800;line-height:1.15}
+  .feat .ft span{font-size:12px;color:var(--gris)}
+  .feat .pr{font-size:22px;font-weight:800;color:var(--rojo)}
+
+  /* Thumbs / gradientes */
+  .thumb{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex:0 0 auto;box-shadow:0 4px 10px rgba(90,45,15,.14)}
+  .g1{background:linear-gradient(135deg,#F7A85B,#F0703F)}
+  .g2{background:linear-gradient(135deg,#EF5F4A,#E0291C)}
+  .g3{background:linear-gradient(135deg,#F6B24A,#F0892E)}
+  .g4{background:linear-gradient(135deg,#CDA994,#A9846A)}
+
+  /* Lista de servicios */
+  .srow{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--card);border-radius:16px;box-shadow:var(--sombra);padding:12px;margin-bottom:12px;transition:transform .12s ease}
+  .srow:active{transform:scale(.985)}
+  .srow-txt{flex:1;min-width:0}
+  .srow-txt b{display:block;font-size:14.5px;font-weight:700;line-height:1.2}
+  .srow-txt span{display:block;font-size:12px;color:var(--gris);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .srow-end{display:flex;align-items:center;gap:7px;flex:0 0 auto}
+  .row-price{font-size:15px;font-weight:800;color:var(--rojo)}
+  .chev{width:18px;height:18px;color:#CFC4B8;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+  /* Beneficios grid */
+  .ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ben-card{background:var(--card);border-radius:16px;box-shadow:var(--sombra);padding:16px 14px}
+  .ben-ic{width:44px;height:44px;border-radius:13px;background:var(--chip);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .ben-ic svg{width:23px;height:23px;fill:var(--rojo)}
+  .ben-card b{font-size:14px;font-weight:700;color:var(--rojo);display:block;line-height:1.2}
+  .ben-card span{font-size:12px;color:#5f574f;display:block;margin-top:4px}
+
+  /* Equipos */
+  .equipo{display:flex;gap:13px;align-items:flex-start;background:var(--card);border-radius:16px;box-shadow:var(--sombra);padding:14px;margin-bottom:11px}
+  .equipo .ic{width:46px;height:46px;border-radius:13px;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 auto}
+  .equipo h4{font-size:14.5px;font-weight:800;color:var(--rojo)}
+  .equipo p{font-size:12.5px;color:#5f574f;margin-top:3px}
+
+  /* Detalle */
+  .d-band{position:relative;border-radius:0 0 24px 24px;color:#fff;padding:20px 54px 22px;text-align:center;font-size:16px;font-weight:800;line-height:1.25;box-shadow:var(--sombra)}
+  .d-band .back{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center}
+  .d-band .back svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .d-img{height:170px;margin:16px 0 0;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:66px;color:#fff;box-shadow:var(--sombra)}
+  .d-body{padding-top:18px}
+  .d-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .d-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--coral)}
+  .d-short{font-size:17px;font-weight:800;line-height:1.25;margin-top:3px}
+  .price-pill{display:inline-flex;align-items:center;background:var(--rojo);color:#fff;font-weight:800;font-size:19px;padding:7px 15px;border-radius:30px;flex:0 0 auto}
+  .d-note{font-size:12.5px;color:var(--gris);font-weight:600;margin-top:8px}
+  .d-h{font-size:15px;font-weight:800;margin:20px 0 10px}
+  ul.d-bul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  ul.d-bul li{position:relative;padding-left:26px;font-size:13.5px;color:#4a423d}
+  ul.d-bul li::before{content:"";position:absolute;left:0;top:5px;width:14px;height:14px;border-radius:50%;background:var(--chip);box-shadow:inset 0 0 0 3px var(--rojo)}
+  .d-table{background:var(--card);border-radius:16px;box-shadow:var(--sombra);overflow:hidden;margin-top:6px}
+  .d-trow{display:flex;align-items:center;gap:11px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+  .d-trow:last-child{border-bottom:none}
+  .d-n{width:24px;height:24px;border-radius:50%;background:var(--chip);color:var(--rojo);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .d-d{flex:1}.d-d b{font-size:13px;display:block;line-height:1.25}.d-d span{font-size:11px;color:var(--gris)}
+  .d-p{font-weight:800;color:var(--rojo);font-size:16px;white-space:nowrap}
+  .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .tier{background:var(--card);border-radius:13px;box-shadow:var(--sombra);text-align:center;padding:12px 4px}
+  .tier .pct{font-size:18px;font-weight:800;color:var(--rojo)}
+  .tier .tl{font-size:10px;color:var(--gris);font-weight:600;margin-top:2px;line-height:1.2}
+  .tier.best{background:var(--rojo)}.tier.best .pct,.tier.best .tl{color:#fff}
+  .d-body .btn{margin-top:22px}
+
+  /* Contacto */
+  .contact-card{display:flex;align-items:center;gap:13px;background:var(--card);border-radius:16px;box-shadow:var(--sombra);padding:15px;margin-bottom:12px}
+  .contact-card .ic{width:46px;height:46px;border-radius:13px;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}
+  .contact-card b{font-size:14px;display:block}
+  .contact-card span{font-size:12.5px;color:var(--gris)}
+  .socials{display:flex;justify-content:center;gap:14px;margin:18px 0}
+  .socials a{width:46px;height:46px;border-radius:50%;background:var(--card);box-shadow:var(--sombra);display:flex;align-items:center;justify-content:center;font-size:20px}
+  .mision{text-align:center;font-size:16px;font-weight:800;color:var(--rojo);margin:6px 0 4px}
+  .mision-sub{text-align:center;font-size:13px;color:var(--gris);margin-bottom:18px}
+  .fine{text-align:center;font-size:11px;color:#a59a8e;line-height:1.5;margin-top:8px}
+
+  /* Tabbar */
+  .tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:540px;background:#fff;border-top:1px solid var(--linea);display:flex;z-index:40;padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--navoff);padding:4px 0}
+  .tab svg{width:23px;height:23px;fill:currentColor;transition:transform .15s ease}
+  .tab span{font-size:10.5px;font-weight:600}
+  .tab.active{color:var(--rojo)}
+  .tab.active svg{transform:translateY(-1px)}
 </style>
 </head>
 <body>
-<div class="wrap">
-
-  <!-- Aviso editable: desaparece cuando pongas el número real -->
+<div class="app">
   <div class="config-warn" id="configWarn">⚠️ Falta tu número de WhatsApp · edítalo en el código (variable <b>WHATSAPP</b>)</div>
 
-  <!-- ===== HEADER ===== -->
-  <header>
+  <!-- Appbar -->
+  <header class="appbar">
     <div class="logo">
       <div class="tag">Healing Your Life</div>
       <div class="row">
@@ -244,322 +186,97 @@
       </div>
       <div class="sub">San Rafael · Valle de los Chillos</div>
     </div>
-    <a class="header-cta" data-wa data-msg="Hola CERAGEM San Rafael 👋 Quiero información sobre sus sesiones y agendar una cita.">
+    <a class="wa-circle" data-wa-msg="Hola CERAGEM San Rafael 👋 Quiero información y agendar una cita." aria-label="WhatsApp">
       <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.5c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.6 20.6 2.9 18.4 2.9 16 2.9 8.8 8.8 2.9 16 2.9S29.1 8.8 29.1 16 23.2 28.9 16 28.9zm7.2-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-      WhatsApp
     </a>
   </header>
 
-  <!-- ===== NAV ===== -->
-  <nav>
-    <a href="#prueba">🔥 Prueba $5</a>
-    <a href="#sesiones">Sesiones</a>
-    <a href="#sueros">Sueroterapia</a>
-    <a href="#tratamientos">Precios</a>
-    <a href="#domicilio">A domicilio</a>
-    <a href="#equipos">Tecnología</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <main class="app-main">
 
-  <!-- ===== HERO ===== -->
-  <div class="hero">
-    <div class="eyebrow">Healing Your Life</div>
-    <h1>Tu bienestar integral<br>en un solo lugar</h1>
-    <p>Termoterapia, masaje, ajuste quiropráctico, desintoxicación iónica y sueroterapia en San Rafael, Valle de los Chillos.</p>
-    <div class="hero-btns">
-      <button class="btn btn-wa" data-wa data-msg="Hola CERAGEM San Rafael 👋 Quiero información sobre sus sesiones y agendar una cita.">
+    <!-- ===== INICIO ===== -->
+    <section class="view" id="view-inicio">
+      <div class="hero-photo g1">💆‍♀️<span class="ph-tag">tu foto aquí</span></div>
+      <div class="eyebrow">Healing Your Life</div>
+      <h1 class="title">Tu bienestar integral en un solo lugar</h1>
+      <p class="lead" style="margin-bottom:16px">Termoterapia, masaje, ajuste quiropráctico, desintoxicación iónica y sueroterapia.</p>
+      <a class="btn btn-wa" data-wa-msg="Hola CERAGEM San Rafael 👋 Quiero información sobre sus sesiones y agendar una cita.">
         <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
         Agendar por WhatsApp
-      </button>
-      <a class="btn btn-ghost" href="#prueba">✨ Conoce la sesión de prueba · $5</a>
-    </div>
-    <div class="hero-badges">
-      <div><span class="n">+19</span>patologías</div>
-      <div><span class="n">5★</span>terapias / sesión</div>
-      <div><span class="n">$5</span>1ª prueba</div>
-    </div>
-  </div>
+      </a>
+      <button class="btn btn-coral" data-detail="prueba">✨ Conoce la sesión de prueba · $5</button>
 
-  <!-- ===== SESIÓN DE PRUEBA ===== -->
-  <section class="prueba" id="prueba">
-    <div class="sec-head">
-      <span class="eyebrow">Oferta de entrada</span>
-      <h2>Sesión de Prueba</h2>
-      <p>Conócenos y descubre el alivio que tu cuerpo necesita.</p>
-    </div>
-    <div class="hero-card">
-      <div class="ribbon">MANTA TÉRMICA + CAMILLA MÁSTER V3</div>
-      <div class="big-price">
-        <div class="num"><small>$</small>5</div>
-        <div class="meta">
-          <b>Relajación profunda</b>
-          <span>Bienestar desde la primera sesión</span>
-        </div>
+      <div class="stats">
+        <div class="st"><div class="n">+19</div><div class="l">Patologías atendidas</div></div>
+        <div class="st"><div class="n">5★</div><div class="l">Terapias por sesión</div></div>
+        <div class="st"><div class="n">$5</div><div class="l">Sesión de prueba</div></div>
       </div>
+
+      <div class="block">
+        <h2>¿Qué es Ceragem?</h2>
+        <p>Combinamos tecnología avanzada y terapias naturales para ayudarte a recuperar tu bienestar físico, mental y emocional.</p>
+        <a class="link-more" data-goto="beneficios">Conoce nuestros beneficios →</a>
+      </div>
+
+      <div class="sec-title" style="margin:18px 2px 12px">Servicios destacados</div>
+      <div id="featList"></div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="view" id="view-servicios" hidden>
+      <div class="view-head"><h2>Nuestros Servicios</h2><p>Terapias diseñadas para tu bienestar integral.</p></div>
+      <div id="serviceList"></div>
+    </section>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section class="view" id="view-beneficios" hidden>
+      <div class="view-head"><h2>Beneficios de nuestras terapias</h2><p>Te ayudamos a sentirte mejor desde el primer día.</p></div>
       <div class="ben-grid">
-        <div class="ben"><div class="ic">💪</div><b>Alivia el dolor</b><span>Espalda, cuello, cintura y piernas.</span></div>
-        <div class="ben"><div class="ic">🔥</div><b>Relax profundo</b><span>Relaja músculos, baja el estrés y mejora el sueño.</span></div>
-        <div class="ben"><div class="ic">❤️</div><b>Mejora circulación</b><span>Activa la circulación y ayuda a eliminar toxinas.</span></div>
-        <div class="ben"><div class="ic">✨</div><b>Bienestar integral</b><span>Te sientes más ligero, relajado y con energía.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5z"/></svg></div><b>Alivio del dolor</b><span>Espalda, cuello, cintura y piernas.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M12 2c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9z"/></svg></div><b>Relajación profunda</b><span>Reduce el estrés y la ansiedad.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C1 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.4 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></div><b>Mejora circulación</b><span>Activa el flujo sanguíneo.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M12 2s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/></svg></div><b>Desintoxicación</b><span>Elimina toxinas y metales pesados.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></div><b>Más energía</b><span>Recupera tu vitalidad y bienestar.</span></div>
+        <div class="ben-card"><div class="ben-ic"><svg viewBox="0 0 24 24"><path d="M21 12.8A8 8 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg></div><b>Sueño reparador</b><span>Descansa mejor y despierta renovado.</span></div>
       </div>
-      <div class="pat-title">Alivio para 19 patologías principales</div>
-      <div class="chips">
-        <span>Dolor lumbar</span><span>Dolor cervical</span><span>Nervio ciático</span><span>Estrés</span><span>Depresión</span><span>Alineación de columna</span><span>Insomnio</span><span>Dolor de espalda</span><span>Artritis</span><span>Artrosis</span><span>Hernia de disco</span><span>Escoliosis</span><span>Fibromialgia</span><span>Tensión muscular</span><span>Contracturas</span><span>Ciática</span><span>Migrañas</span><span>Fatiga crónica</span><span>Problemas posturales</span><span>Dolor de rodillas</span>
+
+      <div class="sec-title" style="margin:24px 2px 12px">Nuestra tecnología</div>
+      <div class="equipo"><div class="ic">🔥</div><div><h4>Manta Térmica Mineralizada</h4><p>Alivia dolores musculares y articulares, mejora la circulación y relaja el sistema nervioso.</p></div></div>
+      <div class="equipo"><div class="ic">🛏️</div><div><h4>Camilla Máster V3 / V4</h4><p>Alinea la columna, alivia dolor de espalda y cervical y descontractura los músculos.</p></div></div>
+      <div class="equipo"><div class="ic">🦶</div><div><h4>Sauna de Pies</h4><p>Mejora la circulación, ayuda al pie diabético y desintoxica con calor profundo.</p></div></div>
+      <div class="equipo"><div class="ic">💆</div><div><h4>Masajeador de Cervical</h4><p>Disminuye rigidez en hombros y cuello, libera contracturas y mejora la movilidad.</p></div></div>
+      <div class="equipo"><div class="ic">👣</div><div><h4>Masajeador de Pies</h4><p>Alivia fascitis plantar, reduce hinchazón y mejora la circulación de pies y piernas.</p></div></div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="view" id="view-contacto" hidden>
+      <div class="view-head"><h2>Contáctanos</h2><p>Agenda tu cita y empieza a sentirte mejor.</p></div>
+      <a class="contact-card" data-wa-msg="Hola CERAGEM San Rafael 👋 Quiero agendar una cita.">
+        <div class="ic">📱</div><div><b>WhatsApp</b><span>Escríbenos y agenda tu cita</span></div>
+      </a>
+      <div class="contact-card"><div class="ic">📍</div><div><b>Ubicación</b><span>San Rafael, Valle de los Chillos — [dirección exacta]</span></div></div>
+      <div class="contact-card"><div class="ic">🕐</div><div><b>Horarios</b><span>[lun–sáb · horas de atención]</span></div></div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="TikTok">🎵</a>
       </div>
-      <div style="padding:18px 16px 16px">
-        <button class="btn-wa-sm" data-wa data-msg="Hola CERAGEM San Rafael 👋 Quiero agendar mi SESIÓN DE PRUEBA de $5 (Manta térmica + Camilla Máster V3). ¿Qué horarios tienen disponibles?">
-          <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-          Agendar mi prueba de $5
-        </button>
-        <div class="cupos">⏳ Cupos limitados por día</div>
-      </div>
-    </div>
-  </section>
+      <div class="mision">❤️ Tu bienestar, nuestra misión</div>
+      <div class="mision-sub">Healing Your Life · CERAGEM San Rafael</div>
+      <p class="fine">Los beneficios descritos son complementarios y no sustituyen el diagnóstico ni el tratamiento médico profesional.</p>
+    </section>
 
-  <!-- ===== SESIONES / PAQUETES ===== -->
-  <section id="sesiones">
-    <div class="sec-head">
-      <span class="eyebrow">Nuestras sesiones</span>
-      <h2>Sesiones y paquetes</h2>
-      <p>Combinamos varias terapias en una sola visita.</p>
-    </div>
+    <!-- ===== DETALLE ===== -->
+    <section class="view" id="view-detail" hidden></section>
 
-    <!-- Sesión 1 -->
-    <div class="card">
-      <div class="media g-calido"><span class="badge promo">2x · 25% OFF</span>🛏️<span class="lbl">foto: sesión completa</span></div>
-      <div class="pad">
-        <div class="price-row">
-          <h3>Sesión Individual / Completa</h3>
-          <span class="price-pill"><small>$</small>10</span>
-        </div>
-        <div class="tag-line">5 terapias en una sola sesión · ¡Trae un acompañante y ambos pagan $7.50 c/u!</div>
-        <div class="incluye">Incluye</div>
-        <ul class="bul">
-          <li>Manta térmica mineralizada — mejora la circulación.</li>
-          <li>Camilla Máster V3 — alivia el dolor y relaja el sistema nervioso.</li>
-          <li>Sauna de pies — ayuda al pie diabético y la circulación.</li>
-          <li>Masajeador de pies y cervical — relaja y descontractura.</li>
-        </ul>
-        <button class="btn-wa-sm" data-wa data-msg="Hola 👋 Me interesa la Sesión Individual/Completa de $10 (promo 2 personas $7.50 c/u). ¿Me dan más información?">
-          <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-          Quiero esta sesión
-        </button>
-      </div>
-    </div>
+  </main>
 
-    <!-- Sesión 2 -->
-    <div class="card">
-      <div class="media g-rojo">💆<span class="lbl">foto: masaje terapéutico</span></div>
-      <div class="pad">
-        <div class="price-row">
-          <h3>Masaje Relajante Descontracturante</h3>
-          <span class="price-pill"><small>$</small>20</span>
-        </div>
-        <div class="tag-line">3 terapias en 1 · 2 sesiones por $30</div>
-        <div class="incluye">Incluye</div>
-        <ul class="bul">
-          <li>Manta térmica mineralizada — relaja músculos y baja la tensión.</li>
-          <li>Camilla Máster V4 — descontractura espalda, cuello y lumbar.</li>
-          <li>Masaje manual terapéutico — libera puntos gatillo y contracturas.</li>
-        </ul>
-        <button class="btn-wa-sm" data-wa data-msg="Hola 👋 Me interesa el Masaje Relajante Descontracturante ($20 · 2 sesiones $30). ¿Me dan más información?">
-          <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-          Quiero esta sesión
-        </button>
-      </div>
-    </div>
-
-    <!-- Sesión 3 -->
-    <div class="card">
-      <div class="media g-naranja">🧘<span class="lbl">foto: sesión de bienestar</span></div>
-      <div class="pad">
-        <div class="price-row">
-          <h3>Sesión de Bienestar</h3>
-          <span class="price-pill"><small>$</small>25</span>
-        </div>
-        <div class="tag-line">Ajuste quiropráctico + Manta térmica + Camilla Máster V3 · 1 hora</div>
-        <div class="incluye">Ayuda a aliviar</div>
-        <ul class="bul">
-          <li>Dolor de espalda (cervical, dorsal y lumbar).</li>
-          <li>Dolor de cuello y rigidez cervical.</li>
-          <li>Tensión muscular y contracturas.</li>
-          <li>Cefaleas y migrañas por tensión.</li>
-          <li>Dolor articular y limitación de movimiento.</li>
-        </ul>
-        <button class="btn-wa-sm" data-wa data-msg="Hola 👋 Me interesa la Sesión de Bienestar de $25 (ajuste quiropráctico + manta térmica + camilla Máster V3). ¿Me dan más información?">
-          <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-          Quiero esta sesión
-        </button>
-      </div>
-    </div>
-
-    <!-- Sesión 4 - Iónica -->
-    <div class="card">
-      <div class="media g-naranja"><span class="badge">Mejor opción 3x</span>💧<span class="lbl">foto: desintoxicación iónica</span></div>
-      <div class="pad">
-        <div class="price-row">
-          <h3>Desintoxicación Iónica</h3>
-          <span class="price-pill"><small>$</small>20</span>
-        </div>
-        <div class="tag-line">Limpia tu cuerpo y renueva tu energía · 1 ses. $20 · 2 ses. $30 · 3 ses. $40</div>
-        <div class="incluye">Beneficios</div>
-        <ul class="bul">
-          <li>Elimina toxinas y metales pesados a través de los pies.</li>
-          <li>Aumenta tu energía y vitalidad.</li>
-          <li>Fortalece el sistema inmunológico.</li>
-          <li>Ayuda con cansancio, digestión, piel, estrés y retención de líquidos.</li>
-        </ul>
-        <button class="btn-wa-sm" data-wa data-msg="Hola 👋 Me interesa la Desintoxicación Iónica. ¿Me explican los paquetes (1 sesión $20 · 2 sesiones $30 · 3 sesiones $40)?">
-          <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-          Quiero esta sesión
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SUEROTERAPIA ===== -->
-  <section id="sueros" style="background:linear-gradient(160deg,#FFFDF9,#FBEFE2)">
-    <div class="sec-head">
-      <span class="eyebrow">Soluciones de salud avanzadas</span>
-      <h2>Sueroterapia 💉</h2>
-      <p>El toque perfecto de bienestar · desde $35 en centro.</p>
-    </div>
-
-    <div class="suero-card">
-      <div class="suero-ic" style="background:linear-gradient(135deg,#F6B73C,#F08C1E)">🍊</div>
-      <div>
-        <h4>Megadosis de Vitamina C</h4>
-        <div class="comp">Vitamina C</div>
-        <ul><li>Refuerza el sistema inmunológico.</li><li>Mejora la absorción del hierro.</li><li>Aporta energía y vitalidad.</li></ul>
-      </div>
-    </div>
-
-    <div class="suero-card">
-      <div class="suero-ic" style="background:linear-gradient(135deg,#7BC47F,#4DA357)">🥤</div>
-      <div>
-        <h4>Multivitamínico</h4>
-        <div class="comp">Vitamina C + Glutatión + Complejo B</div>
-        <ul><li>Combate el cansancio extremo.</li><li>Revitaliza el cuerpo y la mente.</li><li>Apoya el metabolismo y la digestión.</li></ul>
-      </div>
-    </div>
-
-    <div class="suero-card">
-      <div class="suero-ic" style="background:linear-gradient(135deg,#8E8FE0,#5C5CC4)">🧘</div>
-      <div>
-        <h4>Anti Estrés Profundo</h4>
-        <div class="comp">Vitamina C + Glutatión + 5HTP</div>
-        <ul><li>Regula el estado de ánimo y la ansiedad.</li><li>Favorece un sueño reparador.</li><li>Reduce el estrés crónico.</li></ul>
-      </div>
-    </div>
-
-    <div class="suero-card">
-      <div class="suero-ic" style="background:linear-gradient(135deg,#E0A95B,#C9842F)">🦴</div>
-      <div>
-        <h4>Desinflamación Articular</h4>
-        <div class="comp">Vitamina C + Magnesio + Sulfato de Magnesio</div>
-        <ul><li>Alivia dolores articulares y musculares.</li><li>Reduce la inflamación interna.</li><li>Mejora la movilidad y flexibilidad.</li></ul>
-      </div>
-    </div>
-
-    <div class="suero-card">
-      <div class="suero-ic" style="background:linear-gradient(135deg,#B98A5E,#8B5E34)">🌿</div>
-      <div>
-        <h4>Detox Glutatión</h4>
-        <div class="comp">Vitamina C + Glutatión</div>
-        <ul><li>Detox profundo: elimina toxinas y metales pesados.</li><li>Aumenta energía y vitalidad.</li><li>Potente antioxidante y antiedad.</li></ul>
-      </div>
-    </div>
-
-    <button class="btn-wa-sm" style="margin-top:6px" data-wa data-msg="Hola 👋 Quiero información sobre la Sueroterapia y sus tipos (Megadosis Vit C, Multivitamínico, Anti Estrés, Desinflamación Articular, Detox Glutatión).">
-      <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-      Consultar sueroterapia
-    </button>
-  </section>
-
-  <!-- ===== TABLA DE PRECIOS ===== -->
-  <section id="tratamientos">
-    <div class="sec-head">
-      <span class="eyebrow">En nuestro centro</span>
-      <h2>Tratamientos y precios</h2>
-      <p>Arma tu sesión según lo que necesites.</p>
-    </div>
-    <div class="pricelist">
-      <div class="pl-row"><div class="nro">1</div><div class="desc"><b>Manta térmica + Camilla MV3 + Sauna y masajeador de pies</b><span>1 h 30 min</span></div><div class="pr">$10</div></div>
-      <div class="pl-row"><div class="nro">2</div><div class="desc"><b>Manta térmica + Camilla MV3 + Masaje manual localizado</b><span>1 hora</span></div><div class="pr">$20</div></div>
-      <div class="pl-row"><div class="nro">3</div><div class="desc"><b>Ajuste quiropráctico + Manta térmica y Camilla MV3</b><span>1 hora</span></div><div class="pr">$25</div></div>
-      <div class="pl-row"><div class="nro">4</div><div class="desc"><b>Terapia neural + Electrodos + Rehabilitación + Ajuste quiropráctico básico</b><span>1 h 15 min</span></div><div class="pr">$30</div></div>
-      <div class="pl-row"><div class="nro">5</div><div class="desc"><b>Masaje manual terapéutico + Electrodos</b><span>Medio cuerpo · 45 min</span></div><div class="pr">$20</div></div>
-      <div class="pl-row"><div class="nro">6</div><div class="desc"><b>Masaje manual terapéutico + Electrodos</b><span>Cuerpo completo · 1 h 20 min</span></div><div class="pr">$35</div></div>
-      <div class="pl-row star"><div class="nro">★</div><div class="desc"><b>Sueroterapia</b><span>Soluciones de salud avanzadas</span></div><div class="pr">$35</div></div>
-    </div>
-  </section>
-
-  <!-- ===== A DOMICILIO ===== -->
-  <section class="domicilio" id="domicilio">
-    <div class="sec-head">
-      <span class="eyebrow">Vamos a tu casa</span>
-      <h2>Servicios a domicilio</h2>
-      <p>Llevamos tu bienestar hasta tu hogar.</p>
-    </div>
-    <div class="pricelist">
-      <div class="pl-row"><div class="desc"><b>Quiropraxia + Masaje + Terapia neural</b></div><div class="pr">$40</div></div>
-      <div class="pl-row"><div class="desc"><b>Desintoxicación iónica</b></div><div class="pr">$28</div></div>
-      <div class="pl-row"><div class="desc"><b>Sueroterapia</b></div><div class="pr">$50</div></div>
-    </div>
-    <div style="text-align:center;font-weight:700;font-size:13px;color:var(--rojo);margin-top:20px;text-transform:uppercase;letter-spacing:1px">Descuentos por cantidad</div>
-    <div class="desc-tiers">
-      <div class="tier"><div class="pct">0%</div><div class="lbl">1 servicio</div></div>
-      <div class="tier"><div class="pct">10%</div><div class="lbl">2 servicios</div></div>
-      <div class="tier"><div class="pct">15%</div><div class="lbl">3 servicios</div></div>
-      <div class="tier best"><div class="pct">18%</div><div class="lbl">4 o más</div></div>
-    </div>
-    <button class="btn-wa-sm" style="margin-top:20px" data-wa data-msg="Hola 👋 Quiero información de los servicios A DOMICILIO y sus descuentos por cantidad.">
-      <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-      Solicitar a domicilio
-    </button>
-  </section>
-
-  <!-- ===== EQUIPOS / TECNOLOGÍA ===== -->
-  <section id="equipos">
-    <div class="sec-head">
-      <span class="eyebrow">Tecnología CERAGEM</span>
-      <h2>Nuestros equipos</h2>
-      <p>La tecnología detrás de cada sesión.</p>
-    </div>
-    <div class="card"><div class="pad" style="padding:6px 16px">
-      <div class="equipo"><div class="ic">🔥</div><div><h4>Manta Térmica Mineralizada</h4><p>Alivia dolores musculares y articulares, mejora la circulación, reduce inflamación y tensión, relaja el sistema nervioso y aporta energía.</p></div></div>
-      <div class="equipo"><div class="ic">🛏️</div><div><h4>Camilla Máster V3 / V4</h4><p>Alinea la columna, alivia dolor de espalda y cervical, descontractura los músculos, mejora la circulación y relaja el cuerpo. (V4 = tecnología avanzada).</p></div></div>
-      <div class="equipo"><div class="ic">🦶</div><div><h4>Sauna de Pies</h4><p>Alivia dolor de rodillas y articulaciones, mejora la circulación en pies y piernas, ayuda al pie diabético y desintoxica con calor profundo.</p></div></div>
-      <div class="equipo"><div class="ic">💆</div><div><h4>Masajeador de Cervical</h4><p>Disminuye rigidez en hombros y cervical, desinflama músculos tensos, libera contracturas y mejora la movilidad del cuello.</p></div></div>
-      <div class="equipo"><div class="ic">👣</div><div><h4>Masajeador de Pies</h4><p>Alivia fascitis plantar y espolón calcáneo, reduce pies hinchados y retención de líquidos, mejora la circulación y ayuda con várices.</p></div></div>
-    </div></div>
-  </section>
-
-  <!-- ===== FOOTER / CONTACTO ===== -->
-  <footer id="contacto">
-    <div class="flogo">
-      <div class="word">CERAGEM</div>
-      <div class="sub">San Rafael · Valle de los Chillos</div>
-    </div>
-    <div class="mision">❤️ Tu bienestar, nuestra misión</div>
-    <div class="contact-list">
-      <a data-wa data-msg="Hola CERAGEM San Rafael 👋 Quiero agendar una cita."><span class="ic">📱</span><span><b>WhatsApp</b> · Agenda tu cita</span></a>
-      <div><span class="ic">📍</span><span>San Rafael, Valle de los Chillos — <i>[dirección exacta]</i></span></div>
-      <div><span class="ic">🕐</span><span>Horarios: <i>[lun–sáb, horas]</i></span></div>
-    </div>
-    <div class="socials">
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="TikTok">🎵</a>
-    </div>
-    <div class="fine">Healing Your Life · CERAGEM San Rafael<br>Los beneficios descritos son complementarios y no sustituyen el diagnóstico ni el tratamiento médico profesional.</div>
-  </footer>
-
-  <!-- ===== Botón flotante WhatsApp ===== -->
-  <a class="fab" data-wa data-msg="Hola CERAGEM San Rafael 👋 Quiero información sobre sus sesiones y agendar una cita." aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
-  </a>
-
+  <!-- Tabbar -->
+  <nav class="tabbar">
+    <button class="tab active" data-view="inicio"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-2.5v9.5h-5V15h-3v5.5h-5V11H3z"/></svg><span>Inicio</span></button>
+    <button class="tab" data-view="servicios"><svg viewBox="0 0 24 24"><path d="M20 4C10 4 4 10 4 20c0-1 .3-4 2.5-7C9 10 14 9 14 9s-4 2-6 5c-1.4 2-2 5-2 6 9 0 16-6 14-16z"/></svg><span>Servicios</span></button>
+    <button class="tab" data-view="beneficios"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C1 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.4 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg><span>Beneficios</span></button>
+    <button class="tab" data-view="contacto"><svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4V5a1 1 0 0 1 1-1z"/></svg><span>Contacto</span></button>
+  </nav>
 </div>
 
 <script>
@@ -570,21 +287,161 @@
   ========================================================== */
   const WHATSAPP = "5939XXXXXXXX"; // <-- ✏️ TU NÚMERO DE WHATSAPP AQUÍ
 
-  (function(){
-    const numeroValido = /^[0-9]{8,15}$/.test(WHATSAPP) && !/X/i.test(WHATSAPP);
-    if(!numeroValido){
-      document.getElementById('configWarn').classList.add('show');
+  const waSvg = '<svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm7.2 18.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-1.9-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>';
+  const waLink = m => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(m);
+
+  /* ===== Datos de servicios ===== */
+  const SERVICES = [
+    {id:'prueba', name:'Sesión de Prueba', price:'$5', priceNote:'1ª sesión · cupos limitados por día',
+     tag:'Manta Térmica + Camilla Máster V3', short:'Relajación profunda desde la primera sesión.',
+     emoji:'🔥', grad:'g2', featured:true, kicker:'Oferta de entrada',
+     benefits:['Alivia el dolor de espalda, cuello, cintura y piernas.','Relaja los músculos, reduce el estrés y mejora el sueño.','Activa la circulación y ayuda a eliminar toxinas.','Te sientes más ligero, relajado y con energía.'],
+     wa:'Hola CERAGEM San Rafael 👋 Quiero agendar mi SESIÓN DE PRUEBA de $5 (Manta térmica + Camilla Máster V3). ¿Qué horarios tienen disponibles?'},
+
+    {id:'individual', name:'Sesión Individual / Completa', price:'$10', priceNote:'Promo 2 personas: $7.50 c/u',
+     tag:'5 terapias en una sola sesión', short:'Cinco terapias combinadas en una sola visita.',
+     emoji:'🛏️', grad:'g1', featured:true,
+     benefits:['Manta térmica mineralizada — mejora la circulación.','Camilla Máster V3 — alivia el dolor y relaja el sistema nervioso.','Sauna de pies — ayuda al pie diabético y la circulación.','Masajeador de pies y cervical — relaja y descontractura.'],
+     wa:'Hola 👋 Me interesa la Sesión Individual/Completa de $10 (promo 2 personas $7.50 c/u). ¿Me dan más información?'},
+
+    {id:'descontracturante', name:'Masaje Relajante Descontracturante', price:'$20', priceNote:'2 sesiones por $30',
+     tag:'3 terapias en 1', short:'Libera contracturas y tensión muscular profunda.',
+     emoji:'💆', grad:'g2', featured:true,
+     benefits:['Manta térmica mineralizada — relaja y baja la tensión.','Camilla Máster V4 — descontractura espalda, cuello y lumbar.','Masaje manual terapéutico — libera puntos gatillo y contracturas.'],
+     wa:'Hola 👋 Me interesa el Masaje Relajante Descontracturante ($20 · 2 sesiones $30).'},
+
+    {id:'bienestar', name:'Sesión de Bienestar', price:'$25', priceNote:'1 hora',
+     tag:'Ajuste quiropráctico + Manta + Camilla V3', short:'Alivia el dolor de espalda, cuello y articulaciones.',
+     emoji:'🧘', grad:'g3', benefitsTitle:'Ayuda a aliviar',
+     benefits:['Dolor de espalda (cervical, dorsal y lumbar).','Dolor de cuello y rigidez cervical.','Tensión muscular y contracturas.','Cefaleas y migrañas por tensión.','Dolor articular y limitación de movimiento.'],
+     wa:'Hola 👋 Me interesa la Sesión de Bienestar de $25 (ajuste quiropráctico + manta térmica + camilla Máster V3).'},
+
+    {id:'ionica', name:'Desintoxicación Iónica', price:'$20', priceNote:'1 ses $20 · 2 ses $30 · 3 ses $40',
+     tag:'Limpia tu cuerpo, renueva tu energía', short:'Elimina toxinas y metales pesados a través de los pies.',
+     emoji:'💧', grad:'g3',
+     benefits:['Elimina toxinas y metales pesados por los pies.','Aumenta tu energía y vitalidad.','Fortalece el sistema inmunológico.','Ayuda con digestión, piel, estrés y retención de líquidos.'],
+     wa:'Hola 👋 Me interesa la Desintoxicación Iónica. ¿Me explican los paquetes (1 sesión $20 · 2 sesiones $30 · 3 sesiones $40)?'},
+
+    {id:'sueroterapia', name:'Sueroterapia', price:'$35', priceNote:'Desde · 5 tipos disponibles',
+     tag:'Soluciones de salud avanzadas', short:'Hidratación y nutrición avanzada para tu cuerpo.',
+     emoji:'💉', grad:'g1', benefitsTitle:'Tipos de suero',
+     benefits:['Megadosis de Vitamina C — inmunidad, energía y vitalidad.','Multivitamínico — combate el cansancio extremo.','Anti Estrés Profundo — ánimo, sueño reparador y menos estrés.','Desinflamación Articular — alivia dolores y rigidez.','Detox Glutatión — antioxidante y antiedad.'],
+     wa:'Hola 👋 Quiero información sobre la Sueroterapia y sus tipos.'},
+
+    {id:'centro', name:'Tratamientos en centro', priceNote:'Arma tu sesión según lo que necesites',
+     tag:'Precios por tratamiento', short:'Combina los tratamientos a tu medida.',
+     emoji:'📋', grad:'g4', type:'table',
+     table:[
+       {n:'1',desc:'Manta térmica + Camilla MV3 + Sauna y masajeador de pies',sub:'1 h 30 min',price:'$10'},
+       {n:'2',desc:'Manta térmica + Camilla MV3 + Masaje manual localizado',sub:'1 hora',price:'$20'},
+       {n:'3',desc:'Ajuste quiropráctico + Manta térmica y Camilla MV3',sub:'1 hora',price:'$25'},
+       {n:'4',desc:'Terapia neural + Electrodos + Rehabilitación + Ajuste básico',sub:'1 h 15 min',price:'$30'},
+       {n:'5',desc:'Masaje manual terapéutico + Electrodos (medio cuerpo)',sub:'45 min',price:'$20'},
+       {n:'6',desc:'Masaje manual terapéutico + Electrodos (cuerpo completo)',sub:'1 h 20 min',price:'$35'},
+       {n:'★',desc:'Sueroterapia',sub:'Soluciones avanzadas',price:'$35'}
+     ],
+     wa:'Hola 👋 Quiero ver los tratamientos y precios del centro.'},
+
+    {id:'domicilio', name:'Servicios a domicilio', priceNote:'Vamos a tu casa',
+     tag:'Con descuento por cantidad', short:'Llevamos tu bienestar hasta tu hogar.',
+     emoji:'🏠', grad:'g4', type:'table',
+     table:[
+       {desc:'Quiropraxia + Masaje + Terapia neural',price:'$40'},
+       {desc:'Desintoxicación iónica',price:'$28'},
+       {desc:'Sueroterapia',price:'$50'}
+     ],
+     tiers:[{pct:'0%',label:'1 servicio'},{pct:'10%',label:'2 servicios'},{pct:'15%',label:'3 servicios'},{pct:'18%',label:'4 o más'}],
+     wa:'Hola 👋 Quiero información de los servicios A DOMICILIO y sus descuentos por cantidad.'}
+  ];
+
+  const byId = id => SERVICES.find(s => s.id === id);
+
+  /* ===== Render lista ===== */
+  function rowHtml(s){
+    const end = s.price ? '<span class="row-price">'+s.price+'</span>' : '';
+    return '<button class="srow" data-detail="'+s.id+'">'
+      + '<span class="thumb '+s.grad+'">'+s.emoji+'</span>'
+      + '<span class="srow-txt"><b>'+s.name+'</b><span>'+s.short+'</span></span>'
+      + '<span class="srow-end">'+end+'<svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>'
+      + '</button>';
+  }
+  document.getElementById('serviceList').innerHTML = SERVICES.map(rowHtml).join('');
+
+  /* ===== Render destacados (Inicio) ===== */
+  function featHtml(s){
+    return '<button class="feat" data-detail="'+s.id+'">'
+      + '<span class="thumb '+s.grad+'">'+s.emoji+'</span>'
+      + '<span class="ft">'+(s.kicker?'<span class="k">'+s.kicker+'</span>':'')+'<b>'+s.name+'</b><span>'+s.short+'</span></span>'
+      + (s.price?'<span class="pr">'+s.price+'</span>':'')
+      + '</button>';
+  }
+  document.getElementById('featList').innerHTML = SERVICES.filter(s=>s.featured).map(featHtml).join('');
+
+  /* ===== Render detalle ===== */
+  function detailHtml(s){
+    let body = '';
+    if(s.benefits){
+      body += '<div class="d-h">'+(s.benefitsTitle||'Beneficios')+'</div><ul class="d-bul">'
+            + s.benefits.map(b=>'<li>'+b+'</li>').join('') + '</ul>';
     }
-    const base = "https://wa.me/" + WHATSAPP + "?text=";
-    document.querySelectorAll('[data-wa]').forEach(function(el){
-      const msg = el.getAttribute('data-msg') || "Hola CERAGEM San Rafael 👋";
-      const url = base + encodeURIComponent(msg);
-      el.setAttribute('href', url);
-      el.setAttribute('target','_blank');
-      el.setAttribute('rel','noopener');
-      if(el.tagName === 'BUTTON'){
-        el.addEventListener('click', function(){ window.open(url,'_blank','noopener'); });
-      }
+    if(s.table){
+      body += '<div class="d-h">'+(s.id==='domicilio'?'Servicios y precios':'Tratamientos y precios')+'</div><div class="d-table">'
+            + s.table.map(t=>'<div class="d-trow">'+(t.n?'<span class="d-n">'+t.n+'</span>':'')
+                + '<span class="d-d"><b>'+t.desc+'</b>'+(t.sub?'<span>'+t.sub+'</span>':'')+'</span>'
+                + '<span class="d-p">'+t.price+'</span></div>').join('')
+            + '</div>';
+    }
+    if(s.tiers){
+      body += '<div class="d-h">Descuentos por cantidad</div><div class="tiers">'
+            + s.tiers.map((t,i)=>'<div class="tier'+(i===s.tiers.length-1?' best':'')+'"><div class="pct">'+t.pct+'</div><div class="tl">'+t.label+'</div></div>').join('')
+            + '</div>';
+    }
+    const priceBlock = s.price ? '<span class="price-pill">'+s.price+'</span>' : '';
+    return '<div class="d-band '+s.grad+'"><button class="back" data-back aria-label="Volver"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><span>'+s.name+'</span></div>'
+      + '<div style="padding:0 18px 24px">'
+      + '<div class="d-img '+s.grad+'">'+s.emoji+'</div>'
+      + '<div class="d-body">'
+      + '<div class="d-top"><div><div class="d-tag">'+s.tag+'</div><div class="d-short">'+s.short+'</div></div>'+priceBlock+'</div>'
+      + (s.priceNote?'<div class="d-note">'+s.priceNote+'</div>':'')
+      + body
+      + '<a class="btn btn-wa" href="'+waLink(s.wa)+'" target="_blank" rel="noopener">'+waSvg+' Agendar por WhatsApp</a>'
+      + '</div></div>';
+  }
+
+  /* ===== Navegación ===== */
+  const views = document.querySelectorAll('.view');
+  const tabs = document.querySelectorAll('.tab');
+  function showView(name, activeTab){
+    document.querySelectorAll('main .view').forEach(v=>{ v.hidden = (v.id !== 'view-'+name); });
+    const at = activeTab || name;
+    tabs.forEach(t=>t.classList.toggle('active', t.dataset.view === at));
+    window.scrollTo(0,0);
+  }
+  function openDetail(id){
+    const s = byId(id); if(!s) return;
+    document.getElementById('view-detail').innerHTML = detailHtml(s);
+    showView('detail','servicios');
+  }
+
+  // Tabs
+  tabs.forEach(t=>t.addEventListener('click', ()=>showView(t.dataset.view)));
+  // Delegación de clics
+  document.addEventListener('click', e=>{
+    const det = e.target.closest('[data-detail]');
+    if(det){ openDetail(det.dataset.detail); return; }
+    const back = e.target.closest('[data-back]');
+    if(back){ showView('servicios'); return; }
+    const goto = e.target.closest('[data-goto]');
+    if(goto){ showView(goto.dataset.goto); return; }
+  });
+
+  /* ===== WhatsApp wiring + aviso ===== */
+  (function(){
+    const ok = /^[0-9]{8,15}$/.test(WHATSAPP) && !/x/i.test(WHATSAPP);
+    if(!ok) document.getElementById('configWarn').classList.add('show');
+    document.querySelectorAll('[data-wa-msg]').forEach(el=>{
+      el.setAttribute('href', waLink(el.getAttribute('data-wa-msg')));
+      el.setAttribute('target','_blank'); el.setAttribute('rel','noopener');
     });
   })();
 </script>

@@ -1,0 +1,5 @@
+# Sistema
+.DS_Store
+
+# Config local de Claude / preview (no necesario en el deploy)
+.claude/

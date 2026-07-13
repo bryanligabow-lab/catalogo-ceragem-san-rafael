@@ -131,6 +131,11 @@
   .d-short{font-size:17px;font-weight:800;line-height:1.25;margin-top:3px}
   .price-pill{display:inline-flex;align-items:center;background:var(--rojo);color:#fff;font-weight:800;font-size:19px;padding:7px 15px;border-radius:30px;flex:0 0 auto}
   .d-note{font-size:12.5px;color:var(--gris);font-weight:600;margin-top:8px}
+  .d-desc{font-size:13.5px;color:#5f574f;line-height:1.55;margin-top:12px}
+  .d-eq{display:flex;gap:11px;align-items:flex-start;background:var(--card);border-radius:14px;box-shadow:var(--sombra);padding:12px;margin-bottom:9px}
+  .d-eq-ic{width:38px;height:38px;border-radius:11px;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:19px;flex:0 0 auto}
+  .d-eq b{font-size:13px;font-weight:800;color:var(--rojo);display:block;line-height:1.2}
+  .d-eq span{font-size:12px;color:#5f574f;display:block;margin-top:2px;line-height:1.4}
   .d-h{font-size:15px;font-weight:800;margin:20px 0 10px}
   ul.d-bul{list-style:none;display:flex;flex-direction:column;gap:9px}
   ul.d-bul li{position:relative;padding-left:26px;font-size:13.5px;color:#4a423d}
@@ -318,6 +323,11 @@
      tag:'Manta Térmica + Camilla Máster V3', short:'Relajación profunda desde la primera sesión.',
      emoji:'🔥', img:'prueba.png', grad:'g2', featured:true, kicker:'Oferta de entrada',
      benefits:['Alivia el dolor de espalda, cuello, cintura y piernas.','Relaja los músculos, reduce el estrés y mejora el sueño.','Activa la circulación y ayuda a eliminar toxinas.','Te sientes más ligero, relajado y con energía.'],
+     desc:'Nuestra oferta de entrada para que conozcas el centro y sientas los beneficios de la termoterapia CERAGEM desde la primera visita.',
+     tech:[
+       {ic:'🔥',name:'Manta Térmica Mineralizada',desc:'Calor mineralizado que relaja los músculos, mejora la circulación y reduce la inflamación.'},
+       {ic:'🛏️',name:'Camilla Máster V3',desc:'Termoterapia y masaje espinal que alinea la columna y descontractura.'}
+     ],
      wa:'Hola CERAGEM San Rafael 👋 Quiero agendar mi SESIÓN DE PRUEBA de $5 (Manta térmica + Camilla Máster V3). ¿Qué horarios tienen disponibles?'},
 
     {id:'individual', name:'Sesión Individual', price:'$10', priceNote:'1 h 30 min · Promo 2 personas $7.50 c/u',
@@ -325,6 +335,13 @@
      emoji:'🛏️', img:'individual.png', grad:'g1', featured:true,
      benefitsTitle:'¿Para qué sirve?',
      benefits:['Alivia dolor de espalda, cuello y piernas, tensión y estrés.','Incluye manta térmica mineralizada (cuerpo completo).','Camilla Máster V3 (módulo según patología).','Sauna y masajeador de pies — circulación y relajación.'],
+     desc:'La Sesión Completa Ceragem: 4 terapias combinadas en una sola visita de 1h30, para un bienestar integral de pies a cabeza.',
+     tech:[
+       {ic:'🔥',name:'Manta Térmica Mineralizada',desc:'Calor mineralizado en todo el cuerpo: relaja y mejora la circulación.'},
+       {ic:'🛏️',name:'Camilla Máster V3',desc:'Masaje espinal con módulo según tu patología; alinea la columna.'},
+       {ic:'🦶',name:'Sauna de Pies',desc:'Desintoxica y activa la circulación con calor profundo.'},
+       {ic:'👣',name:'Masajeador de Pies',desc:'Relaja y descontractura pies y piernas.'}
+     ],
      wa:'Hola 👋 Me interesa la Sesión Individual/Completa de $10 (promo 2 personas $7.50 c/u). ¿Me dan más información?'},
 
     {id:'descontracturante', name:'Sesión Combinada', price:'$20', priceNote:'1 h 20 min · 2 sesiones por $30',
@@ -332,24 +349,44 @@
      emoji:'💆', img:'descontracturante.png', grad:'g2', featured:true,
      benefitsTitle:'¿Para qué sirve?',
      benefits:['Libera contracturas, tensión muscular y dolor localizado.','Manta térmica mineralizada (cuerpo completo).','Camilla Máster V3 (módulo de relajación).','Masaje manual terapéutico medio cuerpo (espalda o piernas, a elección).'],
+     desc:'Suma al calor de la manta y la camilla un masaje manual terapéutico localizado, para soltar la tensión justo donde más te pesa.',
+     tech:[
+       {ic:'🔥',name:'Manta Térmica Mineralizada',desc:'Prepara el cuerpo con calor mineralizado.'},
+       {ic:'🛏️',name:'Camilla Máster V3',desc:'Módulo de relajación: masaje espinal descontracturante.'},
+       {ic:'💆',name:'Masaje Manual Terapéutico',desc:'Trabajo manual localizado en espalda o piernas, a tu elección.'}
+     ],
      wa:'Hola 👋 Me interesa la Sesión Combinada ($20 · 2 sesiones $30).'},
 
     {id:'bienestar', name:'Sesión de Quiropraxia', price:'$25', priceNote:'1 hora',
      tag:'Ajuste quiropráctico + Manta + Camilla V3', short:'Alivia el dolor de espalda, cuello y articulaciones.',
      emoji:'🧘', img:'bienestar.png', grad:'g3', benefitsTitle:'Ayuda a aliviar',
      benefits:['Dolor de espalda (cervical, dorsal y lumbar).','Dolor de cuello y rigidez cervical.','Tensión muscular y contracturas.','Cefaleas y migrañas por tensión.','Dolor articular y limitación de movimiento.'],
+     desc:'Un ajuste quiropráctico profesional potenciado por la termoterapia de la manta y la camilla Máster V3, para resultados que duran.',
+     tech:[
+       {ic:'🙌',name:'Ajuste Quiropráctico',desc:'Corrige las desalineaciones de la columna con precisión.'},
+       {ic:'🔥',name:'Manta Térmica Mineralizada',desc:'Relaja los músculos para recibir el ajuste sin tensión.'},
+       {ic:'🛏️',name:'Camilla Máster V3',desc:'Descomprime y estabiliza la columna, prolongando los resultados.'}
+     ],
      wa:'Hola 👋 Me interesa la Sesión de Quiropraxia de $25 (ajuste quiropráctico + manta térmica + camilla Máster V3).'},
 
     {id:'ionica', name:'Desintoxicación Iónica', price:'$20', priceNote:'30 min · 1 ses $20 · 2 ses $30 · 3 ses $45',
      tag:'Limpia tu cuerpo, renueva tu energía', short:'Elimina toxinas y metales pesados a través de los pies.',
      emoji:'💧', img:'ionica.png', grad:'g3',
      benefits:['Elimina toxinas y metales pesados por los pies.','Aumenta tu energía y vitalidad.','Fortalece el sistema inmunológico.','Ayuda con digestión, piel, estrés y retención de líquidos.'],
+     desc:'Terapia no invasiva: un baño de agua ionizada por los pies que ayuda a tu cuerpo a eliminar toxinas y metales pesados.',
+     tech:[
+       {ic:'💧',name:'Máquina de Ionización',desc:'Genera un baño de agua ionizada que extrae toxinas a través de los pies.'}
+     ],
      wa:'Hola 👋 Me interesa la Desintoxicación Iónica. ¿Me explican los paquetes (1 sesión $20 · 2 sesiones $30 · 3 sesiones $45)?'},
 
     {id:'sueroterapia', name:'Sueroterapia', price:'$35', priceNote:'Desde · 5 tipos disponibles',
      tag:'Soluciones de salud avanzadas', short:'Hidratación y nutrición avanzada para tu cuerpo.',
      emoji:'💉', img:'sueroterapia.png', grad:'g1', benefitsTitle:'Tipos de suero',
      benefits:['Megadosis de Vitamina C — inmunidad, energía y vitalidad.','Multivitamínico — combate el cansancio extremo.','Anti Estrés Profundo — ánimo, sueño reparador y menos estrés.','Desinflamación Articular — alivia dolores y rigidez.','Detox Glutatión — antioxidante y antiedad.'],
+     desc:'Nutrientes que van directo al torrente sanguíneo para máxima absorción. Hacemos una breve valoración previa para elegir el suero ideal para ti.',
+     tech:[
+       {ic:'💉',name:'Suero Intravenoso',desc:'Vitaminas y nutrientes directo a la sangre, con valoración previa personalizada.'}
+     ],
      wa:'Hola 👋 Quiero información sobre la Sueroterapia y sus tipos.'},
 
     {id:'centro', name:'Tratamientos en centro', priceNote:'Arma tu sesión según lo que necesites',
@@ -364,6 +401,7 @@
        {n:'6',desc:'Masaje manual terapéutico + Electrodos (cuerpo completo)',sub:'1 hora',price:'$35'},
        {n:'★',desc:'Sueroterapia',sub:'Soluciones avanzadas',price:'$35'}
      ],
+     desc:'Arma tu sesión eligiendo el tratamiento que necesitas. Estos son nuestros precios por tratamiento en el centro.',
      wa:'Hola 👋 Quiero ver los tratamientos y precios del centro.'},
 
     {id:'domicilio', name:'Servicios a domicilio', priceNote:'Vamos a tu casa',
@@ -376,6 +414,7 @@
        {desc:'Sueroterapia',price:'$35'}
      ],
      tiers:[{pct:'0%',label:'1 servicio'},{pct:'10%',label:'2 servicios'},{pct:'15%',label:'3 servicios'},{pct:'18%',label:'4 o más'}],
+     desc:'Llevamos los equipos y el terapeuta hasta tu hogar, con la misma calidad del centro.',
      wa:'Hola 👋 Quiero información de los servicios A DOMICILIO y sus descuentos por cantidad.'}
   ];
 
@@ -408,9 +447,14 @@
   /* ===== Render detalle ===== */
   function detailHtml(s){
     let body = '';
+    if(s.desc){ body += '<p class="d-desc">'+s.desc+'</p>'; }
     if(s.benefits){
       body += '<div class="d-h">'+(s.benefitsTitle||'Beneficios')+'</div><ul class="d-bul">'
             + s.benefits.map(b=>'<li>'+b+'</li>').join('') + '</ul>';
+    }
+    if(s.tech){
+      body += '<div class="d-h">Técnicas y equipos</div>'
+            + s.tech.map(t=>'<div class="d-eq"><div class="d-eq-ic">'+t.ic+'</div><div><b>'+t.name+'</b><span>'+t.desc+'</span></div></div>').join('');
     }
     if(s.table){
       body += '<div class="d-h">'+(s.id==='domicilio'?'Servicios y precios':'Tratamientos y precios')+'</div><div class="d-table">'
